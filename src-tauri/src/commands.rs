@@ -1,4 +1,4 @@
-use crate::database::{AppState, hash_password, verify_password};
+use crate::{AppState, hash_password, verify_password};
 use serde::{Deserialize, Serialize};
 use tauri::State;
 
