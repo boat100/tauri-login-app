@@ -1,6 +1,6 @@
 {
   "$schema": "https://schema.tauri.app/config/2",
-  "productName": "登录系统",
+  "productName": "LoginSystem",
   "version": "1.0.0",
   "identifier": "com.login.app",
   "build": {
