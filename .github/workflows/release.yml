@@ -6,6 +6,9 @@ on:
       - 'v*'
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   build:
     strategy:
@@ -46,12 +49,12 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           tagName: ${{ github.ref_name }}
-          releaseName: '登录系统 ${{ github.ref_name }}'
+          releaseName: 'Login System ${{ github.ref_name }}'
           releaseBody: |
-            ## 功能特性
-            - 用户注册/登录
-            - SQLite 数据库存储
-            - 密码加密存储
-            - 默认管理员账户: admin / admin123
+            ## Features
+            - User Registration/Login
+            - SQLite Database Storage
+            - Password Encryption
+            - Default Admin Account: admin / admin123
           releaseDraft: true
           prerelease: false
