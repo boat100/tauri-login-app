@@ -1,8 +1,6 @@
 #![cfg_attr(not(debug_assertions), windows_subsystem = "windows")]
 
-mod commands;
-mod database;
-
+use login_app::{init_database, AppState, commands};
 use tauri::Manager;
 
 fn main() {
@@ -11,7 +9,7 @@ fn main() {
         .setup(|app| {
             // 初始化数据库
             let app_handle = app.handle();
-            database::init_database(&app_handle).expect("数据库初始化失败");
+            init_database(&app_handle).expect("数据库初始化失败");
             Ok(())
         })
         .invoke_handler(tauri::generate_handler![
