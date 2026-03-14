@@ -1,0 +1,12 @@
+{
+  "name": "login-app",
+  "version": "1.0.0",
+  "description": "Tauri 登录应用",
+  "scripts": {
+    "dev": "tauri dev",
+    "build": "tauri build"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2"
+  }
+}
