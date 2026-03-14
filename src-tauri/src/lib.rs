@@ -34,7 +34,7 @@ pub fn init_database(app_handle: &tauri::AppHandle) -> SqliteResult<()> {
     let admin_password = hash_password("admin123");
     conn.execute(
         "INSERT OR IGNORE INTO users (username, password, role) VALUES (?1, ?2, 'admin')",
-        [&"admin", &admin_password],
+        rusqlite::params!["admin", &admin_password],
     )?;
 
     let state = AppState {
